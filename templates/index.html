@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aestetic body</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header-styles.css') }}">
+    <script src="{{ url_for('static', filename='js/form-script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/slideshow-script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/showform-script.js') }}"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Логотип">
+                </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Записаться на приём</a></li>
+                    <button class="submit-button" id="showFormButton">Оставить заявку</button>
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close"></span>
+                            <form action="/submit-form" method="post">
+                                <div class="form__group field">
+                                    <input type="input" class="form__field" name="surname" id='surname' required />
+                                    <label for="surname" class="form__label">Фамилия</label>
+                                </div>
+                                <div class="form__group field">
+                                    <input type="input" class="form__field" name="name" id='name' required />
+                                    <label for="name" class="form__label">Имя</label>
+                                </div>
+                                <div class="form__group field">
+                                    <input type="input" class="form__field" name="phone" id='phone' required />
+                                    <label for="phone" class="form__label">Номер телефона</label>
+                                </div>
+                                <div class="form__group field">
+                                    <input type="input" class="form__field" name="email" id='email' required />
+                                    <label for="email" class="form__label">Адрес электронной почты</label>
+                                </div>
+                                <button type="submit">Отправить</button>
+                            </form>                                                           
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="{{ url_for('static', filename='slideshow-content/cosmetology-art-1.jpg') }}" alt="image-1">
+        </div>
+        <div class="slides fade">
+            <img src="{{ url_for('static', filename='slideshow-content/cosmetology-art-2.jpg') }}" alt="image-2">
+        </div>
+        <div class="slides fade">
+            <img src="{{ url_for('static', filename='slideshow-content/cosmetology-art-3.jpg') }}" alt="image-3">
+        </div>
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </div>
+</body>
+</html>
