@@ -16,9 +16,10 @@ def submit_form():
 
     print(surname, name, phone, email)
 
-    # Ваша логика обработки данных...
+    #TODO логика обработки данных
 
-    # Отправляем ответ клиенту
+    #Ответ на сторону клиента
+    #TODO добавить проверку данных из формы
     response = jsonify({'message': 'Данные успешно получены на сервере!'})
     response.status_code = 200
     return response
